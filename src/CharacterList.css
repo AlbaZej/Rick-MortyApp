@@ -1,0 +1,283 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400&display=swap');
+
+/* Applying fonts */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #f3f3f3;
+  background-color: #121212;
+}
+
+/* Grid Layout for Character Cards */
+.character-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 20px; /* Increased gap between cards */
+  padding: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Card Styling */
+.character-card {
+  background-color: #232323;
+  border: 2px solid #39FF14;
+  border-radius: 15px; /* Round corners */
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  height: 350px; /* Set a fixed height for all cards */
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  position: relative;
+}
+
+/* Hover effect for the card */
+.character-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #39FF14; /* More intense glow on hover */
+}
+
+/* The "View" text when hovering */
+.character-card .view-text {
+    position: absolute;
+    bottom: 20px; /* Adjusted position to appear towards the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Centering the text horizontally */
+    background-color: #39FF14; /* Neon Green */
+    color: white;
+    font-size: 1rem; /* Smaller font size for the button */
+    padding: 8px 15px; /* Smaller padding */
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+/* Show the "View" text when hovering over the card */
+.character-card:hover .view-text {
+  opacity: 1;
+  background-color: #FF004D; /* Color change on hover to pink */
+}
+
+/* Character Image */
+.character-image {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover;
+  border-radius: 10px; /* Rounded image corners */
+}
+
+/* Character Information */
+.character-info {
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.character-info h2 {
+  font-size: 1rem; /* Reduced font size for name */
+  color: #39FF14;
+  font-family: 'Orbitron', sans-serif; /* Orbitron for headers */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px; /* Reduced space between name and status */
+}
+
+.character-info p {
+  color: #f3f3f3;
+  font-size: 1rem;
+  margin: 3px 0;
+  font-family: 'Poppins', sans-serif; /* Poppins for body text */
+}
+
+/* Character Popup */
+.character-popup {
+  background-color: #232323;
+  color: #f3f3f3;
+  padding: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the popup */
+  border: 2px solid #39FF14;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 1000px; /* Larger popup width */
+  z-index: 20;
+  display: flex; /* Flexbox for aligning content */
+  gap: 20px; /* Space between the image and text */
+}
+
+.character-popup.active {
+  display: flex; /* Show the popup */
+}
+
+/* Specifically target images inside the popup */
+.character-popup .character-image {
+  width: 250px; /* Adjust the size of the image */
+  height: 300px; /* Adjust the height of the image */
+  object-fit: cover; /* Ensures the image fits within the container */
+  border-radius: 10px; /* Rounded image corners */
+}
+
+.character-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.character-info h3 {
+  font-size: 1.5rem;
+  color: #39FF14;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 10px;
+}
+
+.character-info p {
+  font-size: 1.2rem;
+  color: #f3f3f3;
+  margin: 5px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.close-btn {
+  background-color: transparent;
+  border: none;
+  color: #39FF14;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close-btn:hover {
+  color: #FF004D;
+}
+
+/* Dark overlay behind the popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with opacity */
+  z-index: 10; /* Behind the popup */
+  backdrop-filter: blur(8px); /* Apply blur to everything behind */
+  display: none; /* Initially hidden */
+}
+
+body.popup-active .popup-overlay {
+  display: block; /* Show overlay when popup is active */
+}
+
+/* Pagination Controls */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.pagination button {
+  background-color: #121212; /* Dark background */
+  color: #f3f3f3; /* White text */
+  padding: 10px 20px;
+  border: 2px solid #39FF14; /* Green border */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+}
+
+.pagination button:hover {
+  background-color: #39FF14; /* Green background on hover */
+  color: #121212; /* Dark text */
+}
+
+.pagination button:disabled {
+  background-color: #3a3a3a; /* Dark background when disabled */
+  color: #808080; /* Grey text */
+  cursor: not-allowed;
+}
+
+/* Filters Styling */
+.filters {
+  background-color: #232323;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+  z-index: 10;
+}
+
+.filters h2 {
+  font-size: 1.5rem;
+  color: #39FF14;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 20px;
+}
+
+.filters select, .filters button {
+  background-color: #121212;
+  border: 2px solid #39FF14;
+  border-radius: 20px;
+  color: #f3f3f3;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  width: 200px;
+}
+
+.filters select:focus, .filters button:focus {
+  outline: none;
+  background-color: #39FF14;
+  color: #121212;
+}
+
+.filters button:hover {
+  background-color: #FF004D;
+}
+
+.filters select {
+  width: 180px;
+}
+
+.filters select option[value=""] {
+  display: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #232323;
+}
+
+.footer button {
+  background-color: #121212;
+  color: #f3f3f3;
+  padding: 10px 20px;
+  border: 2px solid #39FF14;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+}
+
+.footer button:hover {
+  background-color: #39FF14;
+  color: #121212;
+}

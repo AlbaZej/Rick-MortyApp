@@ -1,0 +1,58 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #f3f3f3; /* Light text color */
+}
+
+/* App Header */
+.app-header {
+  background-color: #232323; /* Darker background */
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #39FF14; /* Neon green border */
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+}
+
+.app-menu ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.app-menu ul li {
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.app-menu ul li a {
+  color: #f3f3f3; /* Light text */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease; /* Added scale effect */
+}
+
+.app-menu ul li a:hover {
+  color: #FF004D; /* Bright pink on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Main Content */
+.main-content {
+  padding: 20px;
+}
