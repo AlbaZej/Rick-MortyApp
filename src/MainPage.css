@@ -127,3 +127,88 @@
     letter-spacing: 2px;
     margin-bottom: 20px;
   }
+  /* Mobile Responsive */
+@media (max-width: 768px) {
+  /* Banner container for smaller screens */
+  .banner-container {
+    flex-direction: column;
+    align-items: flex-start; /* Align text and video on the left */
+    padding: 15px;
+  }
+
+  /* Text Section */
+  .text-section {
+    font-size: 2.5rem; /* Reduce font size on smaller screens */
+    margin-left: 0;
+    text-align: center; /* Center text */
+  }
+
+  /* Video Section */
+  .video-section {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .banner-video {
+    height: 300px; /* Make the video smaller on mobile */
+  }
+
+  /* Story content styling for smaller screens */
+  .story-content {
+    flex-direction: column;
+    text-align: center;
+    margin: 0 20px;
+  }
+
+  .story-image {
+    max-width: 100%; /* Make the image responsive */
+    margin-bottom: 20px;
+  }
+
+  .story-text {
+    margin-left: 0;
+  }
+
+  .story-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .story-text p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  /* Characters section */
+  .characters-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .character-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .character-card {
+    height: auto; /* Let the height adjust automatically */
+  }
+}
+
+/* Very Small Mobile Devices */
+@media (max-width: 480px) {
+  .text-section {
+    font-size: 2rem;
+  }
+
+  .story-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .story-text p {
+    font-size: 0.9rem;
+  }
+
+  .banner-video {
+    height: 250px; /* Further reduce the video height on very small screens */
+  }
+}

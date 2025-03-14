@@ -56,3 +56,57 @@ body {
 .main-content {
   padding: 20px;
 }
+/* Mobile Menu - when screen size is below 768px */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    padding: 15px 10px;
+    text-align: left; /* Align text to the left */
+  }
+
+  .logo-img {
+    height: 40px;
+    margin-bottom: 10px; /* Add some spacing below the logo */
+  }
+
+  .app-menu ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;
+  }
+
+  .app-menu ul li {
+    font-size: 1rem; /* Reduce font size for smaller screens */
+  }
+
+  .app-menu ul li a {
+    font-size: 1rem; /* Adjust link font size */
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+}
+
+/* Small Devices (Mobile Phones) */
+@media (max-width: 480px) {
+  .logo-img {
+    height: 30px;
+  }
+
+  .app-menu ul {
+    gap: 5px;
+  }
+
+  .app-menu ul li a {
+    font-size: 0.9rem; /* Smaller font size on very small screens */
+  }
+
+  .app-header {
+    padding: 10px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+}

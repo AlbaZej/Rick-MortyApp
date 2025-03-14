@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useLanguage } from './LanguageContext'; // Import the language context
 import { gql, useQuery } from '@apollo/client'; // Import Apollo Client's gql and useQuery
 import './MainPage.css'; // Optional, create a CSS file for your main page styling
