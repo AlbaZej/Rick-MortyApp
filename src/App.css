@@ -1,4 +1,42 @@
-/* General Reset */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,19 +45,18 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #121212; /* Dark background */
-  color: #f3f3f3; /* Light text color */
+  background-color: #121212; 
+  color: #f3f3f3; 
 }
 
-/* App Header */
 .app-header {
-  background-color: #232323; /* Darker background */
+  background-color: #232323; 
   color: white;
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #39FF14; /* Neon green border */
+  border-bottom: 2px solid #39FF14; 
 }
 
 .logo-img {
@@ -35,38 +72,37 @@ body {
 
 .app-menu ul li {
   font-size: 1.2rem;
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-family: 'Orbitron', sans-serif; 
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .app-menu ul li a {
-  color: #f3f3f3; /* Light text */
+  color: #f3f3f3; 
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease, transform 0.3s ease; /* Added scale effect */
+  transition: color 0.3s ease, transform 0.3s ease; 
 }
 
 .app-menu ul li a:hover {
-  color: #FF004D; /* Bright pink on hover */
-  transform: scale(1.1); /* Slight zoom effect */
+  color: #FF004D; 
+  transform: scale(1.1); 
 }
 
-/* Main Content */
 .main-content {
   padding: 20px;
 }
-/* Mobile Menu - when screen size is below 768px */
+
 @media (max-width: 768px) {
   .app-header {
     flex-direction: column;
     padding: 15px 10px;
-    text-align: left; /* Align text to the left */
+    text-align: left; 
   }
 
   .logo-img {
     height: 40px;
-    margin-bottom: 10px; /* Add some spacing below the logo */
+    margin-bottom: 10px; 
   }
 
   .app-menu ul {
@@ -76,11 +112,11 @@ body {
   }
 
   .app-menu ul li {
-    font-size: 1rem; /* Reduce font size for smaller screens */
+    font-size: 1rem; 
   }
 
   .app-menu ul li a {
-    font-size: 1rem; /* Adjust link font size */
+    font-size: 1rem; 
   }
 
   .main-content {
@@ -88,7 +124,6 @@ body {
   }
 }
 
-/* Small Devices (Mobile Phones) */
 @media (max-width: 480px) {
   .logo-img {
     height: 30px;
@@ -99,7 +134,7 @@ body {
   }
 
   .app-menu ul li a {
-    font-size: 0.9rem; /* Smaller font size on very small screens */
+    font-size: 0.9rem; 
   }
 
   .app-header {
