@@ -22,7 +22,7 @@ const MainPage = () => {
       <StorySection />
       <div className="characters-section">
         <h2>{language === 'en' ? 'Main Characters' : 'Hauptfiguren'}</h2>
-        <CharacterCards characters={mainCharacters} />
+        <CharacterCards characters={mainCharacters} showViewDetails={false} /> 
       </div>
     </div>
   );

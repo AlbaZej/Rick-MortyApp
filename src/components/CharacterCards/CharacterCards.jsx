@@ -1,15 +1,29 @@
 import React from 'react';
-import CharacterCard from '../CharacterCard/CharacterCard'; 
+import { useLanguage } from '../../context/LanguageContext';
 
-const CharacterCards = ({ characters, onCardClick }) => {
+const CharacterCards = ({ characters, showViewDetails = true }) => {
+  const { language } = useLanguage();
+
   return (
     <div className="character-cards">
       {characters.map((character) => (
-        <CharacterCard
-          key={character.id}
-          character={character}
-          onClick={() => onCardClick(character)} 
-        />
+        <div key={character.id} className="character-card">
+          <img
+            src={character.image}
+            alt={character.name}
+            className="character-image"
+          />
+          <div className="character-info">
+            <h3>{character.name}</h3>
+            <p>{character.status}</p>
+            <p>{character.species}</p>
+            {showViewDetails && ( 
+              <div className="view-text">
+                {language === 'en' ? 'View Details' : 'Details anzeigen'}
+              </div>
+            )}
+          </div>
+        </div>
       ))}
     </div>
   );
